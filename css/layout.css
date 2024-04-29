@@ -1,0 +1,161 @@
+body {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* 模式选择界面 */
+.modeSelect {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-align: center;
+}
+
+.mode-leftPart {
+	flex: 3;
+	background-color: lightblue;
+	/* border-left: 2px solid black; */
+	border-right: 2px solid black;
+}
+
+.mode-rightPart {
+	flex: 1;
+	background-color: lightgray;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.titleInfo {
+	text-align: center;
+}
+
+.authorInfo {
+	margin-bottom: 1vw;
+	text-align: center;
+}
+
+.author-titleColor {
+	color: #000000;
+}
+
+.modeInfo {
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-top: 0.1vw;
+	margin-bottom: 0.1vw;
+	text-align: left;
+}
+
+.modeButton {
+	width: 25vw;
+	height: 3vw;
+	margin: 1vw;
+	text-align: center;
+}
+
+.mode-rightButton {
+	width: 20vw;
+	height: 3vw;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-top: 0.5vw; /* 默认按钮间隔 */
+	margin-bottom: 0vw;
+	text-align: center;
+}
+
+.mode-rightButton.back {
+	margin-top: 3vw; /* 间隔大的按钮 */
+	margin-bottom: 1vw;
+}
+
+.mode-rightButton.options {
+	height: 2.5vw;
+	margin-top: 0.1vw;
+	margin-bottom: 1vw;
+	text-align: left;
+}
+
+.modeInfo.options {
+	font-size: 13.7px;
+	margin-left: 1.2vw;
+}
+
+.right-configInfo {
+	font-size: 15px;
+	margin-left: 6vw;
+	margin-right: 6vw;
+	margin-bottom: 1vw;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	text-align: center;
+}
+
+
+/* 共用的游戏界面 */
+.gameScreen {
+	display: none;
+}
+
+.game-buttonPart {
+	margin-left: 3vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.turnInfo {
+	width: 10vw;
+	margin-top: 0.1vw;
+	margin-bottom: 0.1vw;
+	white-space: nowrap;
+}
+
+.gameButton {
+	width: 252px;
+	min-height: 2.9vw;
+	margin-top: 0.5vw; /* 默认按钮间隔 */
+	text-align: center;
+}
+
+.gameButton.large-gap {
+	margin-top: 3vw; /* 间隔大的按钮 */
+}
+
+/* 一行双按钮 */
+.gameButton.doubleButton {
+	margin-top: 0vw;
+	display: flex;
+}
+.gameButton.flex {
+	flex: 1
+}
+.gameButton.large-gap.flex {
+	flex: 1
+}
+
+
+/* 棋盘自动适配屏幕高度：可以使用 vh（视口高度）单位来设置元素的高度 */
+.gameBoard {
+	width: 90vh;
+}
+
+/* 坐标字体大小覆盖原样式 */
+.notation-322f9 {
+	font-size: 1.2vw;
+}
+/* 坐标位置覆盖原样式 */
+/* 注意：与function boardnotationPosition()同步更新 */
+/* 横坐标 */
+.alpha-d2270 {
+	bottom: calc(0% + 0.1vw);
+	right: calc(10% - 0.3vw);
+}
+/* 纵坐标 */
+.numeric-fc462 {
+	top: calc(0% + 0.1vw);
+	left: calc(0% + 0.1vw);
+}

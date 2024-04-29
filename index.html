@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title id="title">Chess</title>
+	
+	<style>
+		<!-- 这里可以添加内部样式（先加载） -->
+	</style>
+	
+	<!-- 加载外部CSS文件 -->
+	<link rel="stylesheet" href="./css/library/chessboard-1.0.0.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	
+</head>
+<body>
+	<!-- 模式选择界面 -->
+	<div class="modeSelect">
+		<div class="mode-leftPart">
+			<!-- 左侧区域 -->
+			<h2 class="titleInfo" id="chooseTitle">Chess: Please select a mode</h2>
+			<div class="authorInfo">
+				<a class="author-titleColor" id="authorTitle" href="https://github.com/lieren2023" target="_blank">Author: lieren2023</a>
+			</div>
+			<button id="switchBtn" onclick="toggleLanguage()">Switch Language</button>
+			
+			<p class="modeInfo" id="PlayerVsAI">▶ Player vs AI</p>
+			<button class="modeButton" id="PlayerwVsAIb" onclick="selectMode('PlayerwVsAIb')">Player with the White pieces</button>
+			<button class="modeButton" id="PlayerbVsAIw" onclick="selectMode('PlayerbVsAIw')">Player with the Black pieces</button>
+			
+			<p class="modeInfo" id="PlayerVsPlayer">▶ Player vs Player</p>
+			<button class="modeButton" id="PlayerwVsPlayerb" onclick="selectMode('PlayerwVsPlayerb')">Player with the White pieces</button>
+			<button class="modeButton" id="PlayerbVsPlayerw" onclick="selectMode('PlayerbVsPlayerw')">Player with the Black pieces</button>
+			
+			<p class="modeInfo" id="AIVsAI">▶ AI vs AI</p>
+			<button class="modeButton" id="AIwVsAIb" onclick="selectMode('AIwVsAIb')">AI with the White pieces</button>
+			<button class="modeButton" id="AIbVsAIw" onclick="selectMode('AIbVsAIw')">AI with the Black pieces</button>
+		</div>
+		<div class="mode-rightPart">
+			<!-- 右侧区域 -->
+			<button class="mode-rightButton back" id="backToGameBtn" onclick="backToGame()">Back to game</button>
+			
+			<button class="mode-rightButton" id="animationSpeedBtn" onclick="boardanimationSpeed()">Animation Speed: normal</button>
+			<button class="mode-rightButton" id="AImoveSpeedBtn" onclick="AImoveSpeed()">Move Speed: normal</button>
+			
+			<select class="mode-rightButton options" id="AIMoveModeOptions">
+				<!-- <option id="Opt" value="option1"></option> -->
+				<option id="randomMoveOpt" value="randommove" selected>Random move</option>
+				<!-- <option id="Opt" value="option3"></option> -->
+				<!-- <option id="Opt" value="option4"></option> -->
+			</select>
+			<p class="modeInfo options" id="AIMoveModeTitle">AI Move mode:</p>
+			
+			<p class="right-configInfo" id="rightConfigTitle">Config</p>
+		</div>
+	</div>
+	
+	<!-- 共用的游戏界面 -->
+	<div class="gameScreen" id="commonchessboard">
+		<!-- Chessboard()的第一个参数必须是DOM节点的ID、ID查询选择器或单个DOM节点的ID -->
+		<div class="gameBoard" id="myBoard1"></div>
+		
+		<div class="game-buttonPart">
+			<p class="turnInfo" id="turn"></p>
+			<div class="gameButton doubleButton">
+				<button class="gameButton flex" id="undoBtn" onclick="boardUndo()">Undo</button>
+				<button class="gameButton flex" id="redoBtn" onclick="boardRedo()">Redo</button>
+			</div>
+			
+			<div class="gameButton doubleButton">
+				<button class="gameButton large-gap flex" id="whiteOrientationBtn" onclick="boardorientationWhite()">White Orientation</button>
+				<button class="gameButton large-gap flex" id="blackOrientationBtn" onclick="boardorientationBlack()">Black Orientation</button>
+			</div>
+			<button class="gameButton" id="pieceThemeBtn" onclick="boardpieceTheme()">Piece Theme: cburnett</button>
+			<button class="gameButton" id="boardThemeBtn" onclick="boardTheme()">Board Theme: brown</button>
+			<div class="gameButton doubleButton">
+				<button class="gameButton" id="showNotationBtn" onclick="boardshowNotation()">Notation: show</button>
+				<button class="gameButton" id="notationPositionBtn" onclick="boardnotationPosition()">Position: inner</button>
+			</div>
+			
+			<button class="gameButton large-gap" id="clearBoardBtn" onclick="board.clear()">Clear Board</button>
+			<button class="gameButton" id="startPositionBtn" onclick="board.start();gamereset()">Start Position and Reset</button>
+			<button class="gameButton" id="returnToModeSelectionBtn" onclick="returnToModeSelection()">Return to Mode Selection</button>
+		</div>
+	</div>
+	
+	<script>
+		<!-- 这里可以添加内部JavaScript代码（先加载） -->
+	</script>
+	
+	<!-- 加载外部JavaScript文件 -->
+	<script src="./js/library/jquery-3.4.1.min.js"></script>
+	<script src="./js/library/chessboard-1.0.0.js"></script>
+	<script src="./js/library/chess.js"></script>
+	<script src="./js/game.js"></script>
+	
+</body>
+</html>
